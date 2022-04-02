@@ -2,9 +2,14 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import '../styles/NoteItem.scss'
+// import PropTypes from 'prop-types'
+
 
 const NoteItem = () => {
-    const [note, setNote] = useState(null)
+    const [note, setNote] = useState({
+        name:'',
+        body:''
+    })
     const { id } = useParams()
 
     useEffect(() => {
@@ -15,29 +20,36 @@ const NoteItem = () => {
 
         getNote()
     }, [])
-    const handleUpdate =async () => {
-        try{
+    const handleUpdate = async () => {
+        try {
+
             await axios.put(`http://localhost:8000/api/notes/${id}/update`, note)
             alert('success')
-        }catch{
+
+        } catch {
             alert('failed')
         }
+        
 
     }
-   
+
 
     return (
         <div className='noteItem-container'>
             <div className='noteItem'>
                 <div>
                     <label htmlFor="name-note">Name:</label>
-                    <input value={note?.nameNote} onChange={(e) => setNote({...note, nameNote: e.target.value})} id='name-note' type="text" />
+                    <input value={note?.nameNote || ''} onChange={(e) => setNote({ ...note, nameNote: e.target.value })} id='name-note' type="text" />
                 </div>
-                <textarea value={note?.body} onChange={(e) => setNote({...note, body: e.target.value})} id="w3review" name="w3review" rows="4" cols="50" ></textarea>
+                <textarea value={note?.body || ''} onChange={(e) => setNote({ ...note, body: e.target.value })} rows="4" cols="50" ></textarea>
             </div>
-            <button onClick={handleUpdate} > Update</button>
+            <button className='updatebtn' onClick={handleUpdate} > Update</button>
         </div>
     )
 }
+
+// NoteItem.propTypes = {
+//     onChange: PropTypes.func
+// }
 
 export default NoteItem

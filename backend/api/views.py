@@ -7,6 +7,7 @@ from .serializers import NoteSerializer
 
 # Create your views here.
 from django.http import JsonResponse
+
 @api_view(['GET'])
 def getRoutes(requets):
     routes = [
@@ -56,6 +57,18 @@ def getNote(requets,pk):
     serializer = NoteSerializer(notes,many=False)
     return Response(serializer.data)
 
+
+@api_view(['POST'])
+def createNote(requets):
+    data = requets.data
+    note = Note.objects.create(
+        body= data['body'],
+        nameNote= data['name'],
+    )
+    serializer = NoteSerializer(note,many=False)
+
+    return Response(serializer.data)
+
 @api_view(['PUT'])
 def updateNote(requets,pk):
     data = requets.data
@@ -75,3 +88,4 @@ def deleteNote(requets,pk):
     
 
     return Response("Note was deleted")
+

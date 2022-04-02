@@ -1,17 +1,20 @@
 .noteItem-container {
     padding: 10px 20px;
+
     .noteItem {
-        div{
+        div {
             padding: 5px 0;
-            label{
+
+            label {
                 color: #fff;
             }
-            input{
+
+            input {
                 // outline: none;
                 background: #463e3e;
                 border: none;
                 margin: 0 20px;
-                
+
                 color: #fff;
                 width: 650px;
             }
@@ -28,5 +31,14 @@
         color: #fff;
         border: none;
         // outline: none;
+    }
+
+    .updatebtn {
+        border-radius: 10px;
+        outline: none;
+        background: #ea4242;
+        border: none;
+        padding: 5px 10px;
+        color: #fff;
     }
 }

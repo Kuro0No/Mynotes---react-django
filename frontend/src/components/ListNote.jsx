@@ -17,8 +17,8 @@ const ListNotes = () => {
     const filterNote = notes.filter(item => item.id != id)
     try{
       await axios.delete(`http://localhost:8000/api/notes/${id}/delete`)
-      setNotes(filterNote)
       alert('success')
+      setNotes(filterNote)
       
     } catch{
       alert('failed')

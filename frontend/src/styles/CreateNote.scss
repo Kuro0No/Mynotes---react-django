@@ -1,0 +1,48 @@
+
+.create-container{
+    padding: 10px 20px;
+    label{
+        color: #fff;
+        cursor: pointer;
+
+    }
+    #create-note{
+        padding: 0 10px;
+        margin: 0 20px;
+        border-radius: 10px;
+        outline: none;
+        margin-bottom: 20px;
+    }
+    textarea {
+        min-width: 500px;
+        max-width: 100%;
+        min-height: 270px;
+        max-height: 270px;
+        width: 100%;
+        background: #463e3e;
+        color: #fff;
+        padding: 10px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        outline: none;
+
+        // &:focus{
+        //     border-radius: 10px;
+        //     outline: none;
+        // }
+        // outline: none;
+    }
+    button{
+        border-radius: 10px;
+        outline: none;
+        background: #ea4242;
+        border: none;
+        padding: 5px 10px;
+        color: #fff;
+    }
+
+}
+.updatebtn{
+    border-radius: 10px;
+    
+}
