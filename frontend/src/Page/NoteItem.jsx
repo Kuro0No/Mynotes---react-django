@@ -15,12 +15,27 @@ const NoteItem = () => {
 
         getNote()
     }, [])
+    const handleUpdate =async () => {
+        try{
+            await axios.put(`http://localhost:8000/api/notes/${id}/update`, note)
+            alert('success')
+        }catch{
+            alert('failed')
+        }
+
+    }
+   
 
     return (
         <div className='noteItem-container'>
             <div className='noteItem'>
-                <h4>{note?.nameNote}</h4>
+                <div>
+                    <label htmlFor="name-note">Name:</label>
+                    <input value={note?.nameNote} onChange={(e) => setNote({...note, nameNote: e.target.value})} id='name-note' type="text" />
+                </div>
+                <textarea value={note?.body} onChange={(e) => setNote({...note, body: e.target.value})} id="w3review" name="w3review" rows="4" cols="50" ></textarea>
             </div>
+            <button onClick={handleUpdate} > Update</button>
         </div>
     )
 }

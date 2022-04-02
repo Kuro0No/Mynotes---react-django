@@ -1,10 +1,32 @@
-.noteItem-container{
-    .noteItem{
-        padding: 10px 20px;
+.noteItem-container {
+    padding: 10px 20px;
+    .noteItem {
+        div{
+            padding: 5px 0;
+            label{
+                color: #fff;
+            }
+            input{
+                // outline: none;
+                background: #463e3e;
+                border: none;
+                margin: 0 20px;
+                
+                color: #fff;
+                width: 650px;
+            }
+        }
     }
-    h4{
+
+    textarea {
+        min-width: 500px;
+        max-width: 100%;
+        min-height: 270px;
+        max-height: 270px;
+        width: 100%;
+        background: #463e3e;
         color: #fff;
-        margin: 0;
-        font-size: 30px;
+        border: none;
+        // outline: none;
     }
 }
