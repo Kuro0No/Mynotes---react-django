@@ -6,6 +6,7 @@ import '../styles/NoteItem.scss'
 
 
 const NoteItem = () => {
+    const url = '../../../backend'
     const [note, setNote] = useState({
         name:'',
         body:''
@@ -32,11 +33,12 @@ const NoteItem = () => {
         
 
     }
-
+   
 
     return (
         <div className='noteItem-container'>
             <div className='noteItem'>
+                {/* <img src={`${note?.img || `http://localhost:8000/api/media/img/HDT.png`}`} alt="" /> */}
                 <div>
                     <label htmlFor="name-note">Name:</label>
                     <input value={note?.nameNote || ''} onChange={(e) => setNote({ ...note, nameNote: e.target.value })} id='name-note' type="text" />

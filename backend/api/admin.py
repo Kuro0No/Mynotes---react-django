@@ -4,4 +4,7 @@ from api.models import Note
 
 # Register your models here.
 
-admin.site.register(Note)
+class NoteAdmin(admin.ModelAdmin):
+    list_display = ('nameNote', 'body', 'img')
+
+admin.site.register(Note,NoteAdmin)

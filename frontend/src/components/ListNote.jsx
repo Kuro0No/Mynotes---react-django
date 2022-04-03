@@ -13,6 +13,9 @@ const ListNotes = () => {
     }
     getNotes()
   }, [])
+
+
+  
   const deleteNote =async (id) => {
     const filterNote = notes.filter(item => item.id != id)
     try{
@@ -27,6 +30,7 @@ const ListNotes = () => {
   return (
     <div className='notes-content'>
       {notes.map((note, i) => {
+        console.log(note.img)
         return <div key={note.id} className='notes-group'>
           <Link to={`notes/${note.id}`}   >
 
